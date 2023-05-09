@@ -1,42 +1,35 @@
 const { createApp } = Vue;
-// import { axios } from "axios";
+
 createApp({
   data() {
     return {
-      tasks: null,
-      api_url: "getTask.php",
-      new_task: "",
+      tasks: [],
+      newTask: "",
+      apiUrl: "api.php",
     };
   },
   methods: {
-    add_task() {
-      console.log("add new task to the list");
-
-      const data = {
-        new_task: this.new_task,
-      };
-      axios
-        .post("storeTasks.php", data, {
-          headers: { "Content-Type": "application/json" },
-        })
-        .then((response) => {
-          console.log(response);
-          this.tasks = response.data;
-        })
-        .catch((error) => {
-          console.error(error.message);
+    addTask() {
+      if (this.newTask.trim() !== "") {
+        const data = { title: this.newTask };
+        axios.post(this.apiUrl, data).then(() => {
+          this.tasks.push(data);
+          this.newTask = "";
         });
+      }
+    },
+    removeTask(index) {
+      axios.delete(`${this.apiUrl}?id=${this.tasks[index].id}`).then(() => {
+        this.tasks.splice(index, 1);
+      });
+    },
+    fetchTasks() {
+      axios.get(this.apiUrl).then((response) => {
+        this.tasks = response.data;
+      });
     },
   },
   mounted() {
-    axios
-      .get(this.api_url)
-      .then((response) => {
-        console.log(response);
-        this.tasks = response.data;
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
+    this.fetchTasks();
   },
 }).mount("#app");

@@ -1,18 +1,58 @@
 body {
-  background-color: rgb(0, 22, 50);
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-li {
-  list-style: none;
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
 h1 {
-  color: grey;
-  font-size: 70px;
+  text-align: center;
 }
-.fa-solid {
-  color: rgb(255, 255, 255);
-  font-size: 18px;
+
+form {
+  display: flex;
+  margin-bottom: 20px;
 }
-i {
-  background-color: red;
-  padding: 0.2rem;
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+li button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
