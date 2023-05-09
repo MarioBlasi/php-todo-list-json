@@ -17,7 +17,7 @@ createApp({
       };
       axios
         .post("storeTasks.php", data, {
-          headers: { "Content-Type": "multipart/form-data" },
+          headers: { "Content-Type": "application/json" },
         })
         .then((response) => {
           console.log(response);

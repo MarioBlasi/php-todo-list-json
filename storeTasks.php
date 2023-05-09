@@ -6,7 +6,8 @@ if (isset($_POST['new_task'])){
         "done"=> false
     ];
     // leggi il file json con il file get contents
-    $tasks_string = file_get_contents('file_path');
+    $tasks_string = file_get_contents('./tasks.json');
+
    
     // converti la json stringa e json decode
     $tasks_array = json_decode($tasks_string, true);
@@ -23,6 +24,7 @@ if (isset($_POST['new_task'])){
     header("Access-Control-Allow-Headers: X-Requested-With");
     //echo json
     echo $new_task_json_string;
+
 
    
 }
