@@ -1,6 +1,4 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
 }
 
@@ -10,8 +8,10 @@ body {
   padding: 20px;
 }
 
-h1 {
+#app > h1 {
   text-align: center;
+  font-size: 100px;
+  color: rgb(68, 67, 67);
 }
 
 form {
@@ -29,7 +29,7 @@ button[type="submit"] {
   padding: 10px;
   font-size: 16px;
   background-color: #007bff;
-  color: #fff;
+  color: yellow;
   border: none;
 }
 

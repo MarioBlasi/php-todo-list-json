@@ -16,23 +16,28 @@
       crossorigin="anonymous"
     />
     <!--Script Bootstrap bundle-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--font-awesome/6.4.0/css/brands.min.css-->
+
   </head>
-  <body>
-    <div id="app">
-        <div class="container">
-            <div class="row shadow">
-                <div class="col d-flex justify-content-start flex-column p-2 text-secondary bg-light ">
-                        <h1>Todo List</h1>
-                        <ul>
-                            <li v-for="(task, index) in tasks" :key="index" >
-                                {{ task.title }}
-                                <button @click.prevent="removeTask(index)">Remove</button>
-                            </li>
-                        </ul>
-                        <form @submit.prevent="addTask" class="w-75">
-                            <input type="text"  v-model="newTask" placeholder="Add a new task" />
+  <body class="bg-primary" >
+    <div id="app" >
+    <h1 class="p-5">Todo List</h1>
+        <div class="container bg-light pt-3 rounded">
+            <div class="row shadow ">
+                <div class="col rounded">
+                    <ul>
+                      <li v-for="(task, index) in tasks" :key="index">
+                      {{ task.title }}
+                      
+                      <button @click.prevent="removeTask(index)">Remove</button>
+                      </li>
+                        <form @submit.prevent="addTask">
+                            <input type="text" v-model="newTask" placeholder="Add a new task" />
                             <button type="submit">Inserisci</button>
                         </form>
+                    </ul>
+
                 </div>
             </div>
         </div>
