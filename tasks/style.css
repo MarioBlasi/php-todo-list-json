@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(0, 22, 50);
+}
+li {
+  list-style: none;
+}
+h1 {
+  color: grey;
+  font-size: 70px;
+}
+.fa-solid {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+}
+i {
+  background-color: red;
+  padding: 0.2rem;
+}
