@@ -1,9 +1,9 @@
 const { createApp } = Vue;
-
+// import { axios } from "axios";
 createApp({
   data() {
     return {
-      tasks: [],
+      tasks: null,
       api_url: "getTask.php",
       new_task: "",
     };
