@@ -20,27 +20,32 @@
     <!--font-awesome/6.4.0/css/brands.min.css-->
 
   </head>
-  <body class="bg-primary" >
+  <body class="bg-secondary " >
     <div id="app" >
-    <h1 class="p-5">Todo List</h1>
+      <h1 class="p-5">Todo List</h1>
         <div class="container bg-light pt-3 rounded">
-            <div class="row shadow ">
-                <div class="col rounded">
+            <div class="row shadow rounded">
+                <div class="col ">
                     <ul>
                       <li v-for="(task, index) in tasks" :key="index">
                       {{ task.title }}
                       
                       <button @click.prevent="removeTask(index)">Remove</button>
                       </li>
-                        <form @submit.prevent="addTask">
-                            <input type="text" v-model="newTask" placeholder="Add a new task" />
-                            <button type="submit">Inserisci</button>
-                        </form>
                     </ul>
-
                 </div>
             </div>
         </div>
+        <div class="container pt-3 ">
+          <div class="row shadow rounded bg-light">
+            <div class="col">
+              <form @submit.prevent="addTask "  class="mt-3">
+                <input type="text" v-model="newTask" placeholder="Add a new task" />
+                <button   class=" rounded" type="submit">Inserisci</button>
+              </form>
+            </div>
+          </div>
+        </div>        
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
