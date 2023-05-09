@@ -14,17 +14,17 @@ if (isset($_POST['new_task'])){
     // aggiungere la nuova attività all'array
     array_unshift($tasks_array, $task);
 
-
+    
     //riconvertiamo l'array in una stringa json 
     $new_task_json_string = json_encode($tasks_array);
     //sostituisci il contenuto del file usando file_put_contents()
     file_put_contents($file_path, $new_task_json_string);
     //aggiungo application/json
-    header('Content-Type: application/json');
+    header('Content-Type: application/json');// Imposta l'header come JSON
     header("Access-Control-Allow-Headers: X-Requested-With");
     //echo json
     echo $new_task_json_string;
 
-
+    
    
 }
